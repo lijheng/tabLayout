@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ExtendTabLayout">
+        <attr name="extendTabIndicatorHeight" format="dimension" />
+        <attr name="extendTabIndicatorMarginStart" format="dimension" />
+        <attr name="extendTabIndicatorMarginEnd" format="dimension" />
+        <attr name="extendTabIndicatorSelectColor" format="color|reference" />
+    </declare-styleable>
+</resources>
