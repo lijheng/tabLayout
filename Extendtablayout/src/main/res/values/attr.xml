@@ -5,5 +5,7 @@
         <attr name="extendTabIndicatorMarginStart" format="dimension" />
         <attr name="extendTabIndicatorMarginEnd" format="dimension" />
         <attr name="extendTabIndicatorSelectColor" format="color|reference" />
+        <attr name="extendTabTextSize" format="dimension" />
+        <attr name="extendTabIndicatorDrawable" format="reference" />
     </declare-styleable>
 </resources>

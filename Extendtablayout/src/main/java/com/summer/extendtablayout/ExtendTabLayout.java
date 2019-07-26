@@ -1,10 +1,12 @@
-package com.summer.tabLayout;
+package com.summer.extendtablayout;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -12,11 +14,13 @@ import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
+import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.material.tabs.TabLayout;
+import com.summer.extendtablayout.R;
 
 /**
  * 一个可以{@link TabLayout}
@@ -29,6 +33,11 @@ public class ExtendTabLayout extends TabLayout {
     @ColorInt
     @ColorRes
     private int indicatorSelectColor;
+
+    private @DrawableRes
+    int indicatorDrawable;
+
+    private float tabTextSize;
 
     private final int indicatorMarginStart;
 
@@ -45,6 +54,8 @@ public class ExtendTabLayout extends TabLayout {
         indicatorSelectColor = array.getColor(R.styleable.ExtendTabLayout_extendTabIndicatorSelectColor, 0);
         indicatorMarginStart = array.getDimensionPixelSize(R.styleable.ExtendTabLayout_extendTabIndicatorMarginStart, 0);
         indicatorMarginEnd = array.getDimensionPixelSize(R.styleable.ExtendTabLayout_extendTabIndicatorMarginEnd, 0);
+        tabTextSize = (float) array.getDimensionPixelSize(R.styleable.ExtendTabLayout_extendTabTextSize, 0);
+        indicatorDrawable = array.getResourceId(R.styleable.ExtendTabLayout_extendTabIndicatorDrawable, 0);
         array.recycle();
     }
 
@@ -63,14 +74,19 @@ public class ExtendTabLayout extends TabLayout {
         TextView textView = view.findViewById(R.id.layout_extend_tab_tv_content);
         textView.setText(text);
         textView.setTextColor(getTabTextColors());
+        if (tabTextSize != 0f) {
+            textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, tabTextSize);
+        }
         View indicator = view.findViewById(R.id.layout_extend_tab_indicator);
         ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams) indicator.getLayoutParams();
         params.height = indicatorHeight;
         params.leftMargin = indicatorMarginStart;
         params.rightMargin = indicatorMarginEnd;
         indicator.setLayoutParams(params);
-        indicator.setBackgroundColor(indicatorSelectColor);
+
         indicator.setBackground(createStateListDrawable());
+
+
         return view;
     }
 
@@ -81,7 +97,13 @@ public class ExtendTabLayout extends TabLayout {
      */
     private StateListDrawable createStateListDrawable() {
         StateListDrawable stateListDrawable = new StateListDrawable();
-        stateListDrawable.addState(new int[]{android.R.attr.state_selected}, new ColorDrawable(indicatorSelectColor));
+        Drawable drawable = null;
+        if (indicatorDrawable == 0) {
+            drawable = new ColorDrawable(indicatorSelectColor);
+        } else {
+            drawable = getResources().getDrawable(indicatorDrawable);
+        }
+        stateListDrawable.addState(new int[]{android.R.attr.state_selected}, drawable);
         stateListDrawable.addState(new int[]{}, new ColorDrawable());
         return stateListDrawable;
     }
