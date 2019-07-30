@@ -14,13 +14,13 @@
         android:layout_height="45dp"
         app:extendTabIndicatorDrawable="@drawable/indicator"
         app:extendTabIndicatorHeight="3dp"
-        app:extendTabIndicatorMarginEnd="4dp"
-        app:extendTabIndicatorMarginStart="4dp"
         app:extendTabIndicatorSelectColor="#009049"
         app:tabIndicatorColor="@color/themeColor"
         app:tabIndicatorFullWidth="false"
         app:tabIndicatorHeight="0dp"
         app:tabMode="scrollable"
+        app:extendTabIndicatorOverStart="10dp"
+        app:extendTabIndicatorOverEnd="10dp"
         app:tabSelectedTextColor="@color/themeColor"
         app:tabTextColor="#333333" />
 

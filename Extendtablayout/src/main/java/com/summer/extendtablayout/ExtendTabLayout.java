@@ -20,10 +20,9 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.google.android.material.tabs.TabLayout;
-import com.summer.extendtablayout.R;
 
 /**
- * 一个可以{@link TabLayout}
+ * 一个继承于{@link TabLayout}
  * 通过customView的方式改变tabLayout的indicator，让indicator的宽度等于文字的宽度
  * 且 可以通过属性设置indicator距离tabLayout的左侧右侧距离
  */
@@ -34,6 +33,8 @@ public class ExtendTabLayout extends TabLayout {
     @ColorRes
     private int indicatorSelectColor;
 
+    private final int indicatorWidth;//指示器宽度
+
     private @DrawableRes
     int indicatorDrawable;
 
@@ -42,6 +43,8 @@ public class ExtendTabLayout extends TabLayout {
     private final int indicatorMarginStart;
 
     private final int indicatorMarginEnd;
+
+    private final int indicatorOverStart,indicatorOverEnd;
 
     public ExtendTabLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, com.google.android.material.R.attr.tabStyle);
@@ -56,6 +59,9 @@ public class ExtendTabLayout extends TabLayout {
         indicatorMarginEnd = array.getDimensionPixelSize(R.styleable.ExtendTabLayout_extendTabIndicatorMarginEnd, 0);
         tabTextSize = (float) array.getDimensionPixelSize(R.styleable.ExtendTabLayout_extendTabTextSize, 0);
         indicatorDrawable = array.getResourceId(R.styleable.ExtendTabLayout_extendTabIndicatorDrawable, 0);
+        indicatorWidth = array.getDimensionPixelSize(R.styleable.ExtendTabLayout_extendTabIndicatorWidth, 0);
+        indicatorOverStart = array.getDimensionPixelSize(R.styleable.ExtendTabLayout_extendTabIndicatorOverStart,0);
+        indicatorOverEnd = array.getDimensionPixelSize(R.styleable.ExtendTabLayout_extendTabIndicatorOverEnd,0);
         array.recycle();
     }
 
@@ -77,15 +83,16 @@ public class ExtendTabLayout extends TabLayout {
         if (tabTextSize != 0f) {
             textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, tabTextSize);
         }
+        textView.setPadding(indicatorOverStart,0,indicatorOverEnd,0);
         View indicator = view.findViewById(R.id.layout_extend_tab_indicator);
         ConstraintLayout.LayoutParams params = (ConstraintLayout.LayoutParams) indicator.getLayoutParams();
         params.height = indicatorHeight;
         params.leftMargin = indicatorMarginStart;
         params.rightMargin = indicatorMarginEnd;
+        params.width = indicatorWidth;
         indicator.setLayoutParams(params);
 
         indicator.setBackground(createStateListDrawable());
-
 
         return view;
     }
