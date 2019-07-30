@@ -10,5 +10,6 @@
         <attr name="extendTabIndicatorWidth" format="dimension"/>
         <attr name="extendTabIndicatorOverStart" format="dimension"/>
         <attr name="extendTabIndicatorOverEnd" format="dimension"/>
+        <attr name="extendTabSelectTextSize" format="dimension" />
     </declare-styleable>
 </resources>
