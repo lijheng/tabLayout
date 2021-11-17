@@ -4,26 +4,11 @@ import android.content.Context
 import kotlin.jvm.JvmOverloads
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
-import androidx.annotation.ColorInt
-import androidx.annotation.ColorRes
-import androidx.annotation.DrawableRes
-import android.view.LayoutInflater
-import android.widget.LinearLayout
 import android.widget.TextView
 import android.util.TypedValue
-import androidx.constraintlayout.widget.ConstraintLayout
-import android.graphics.drawable.Drawable
-import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.StateListDrawable
 import android.util.AttributeSet
-import android.util.Log
-import android.util.SparseArray
-import android.view.View
-import android.widget.FrameLayout
 import com.google.android.material.tabs.Util
 import com.summer.extendtablayout.util.TabIndicatorInterpolatorFactory
-import org.w3c.dom.Text
-import java.lang.reflect.Field
 
 /**
  * 一个继承于[TabLayout]

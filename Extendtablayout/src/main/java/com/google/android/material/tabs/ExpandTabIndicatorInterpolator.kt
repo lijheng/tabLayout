@@ -1,7 +1,6 @@
 package com.google.android.material.tabs
 
 import android.graphics.drawable.Drawable
-import android.util.Log
 import android.view.View
 
 internal const val TAG = "ExpandTabIndicatorInter"

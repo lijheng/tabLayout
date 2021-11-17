@@ -2,7 +2,6 @@ package com.google.android.material.tabs
 
 import android.content.Context
 import android.graphics.RectF
-import android.util.Log
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.View
@@ -10,9 +9,7 @@ import android.widget.FrameLayout
 import android.widget.TextView
 import androidx.annotation.Dimension
 import com.summer.extendtablayout.DEFAULT_VALUE
-import com.summer.extendtablayout.ExtendTabLayout
 import com.summer.extendtablayout.util.px
-import java.lang.reflect.Field
 import kotlin.math.roundToInt
 
 object Util {
