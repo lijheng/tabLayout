@@ -24,6 +24,7 @@ class ExtendTabLayout @JvmOverloads constructor(
     defStyleAttr: Int = com.google.android.material.R.attr.tabStyle
 ) : TabLayout(context, attrs, defStyleAttr), OnTabSelectedListener {
 
+
     private val indicatorWidth: Int //指示器宽度
 
     private val tabSelectTextSize: Int
@@ -34,6 +35,7 @@ class ExtendTabLayout @JvmOverloads constructor(
 
     private var tabIndicatorAnimationMode: Int? = null
 
+    constructor(context: Context):this(context, null)
 
     init {
         val array = context.obtainStyledAttributes(attrs, R.styleable.ExtendTabLayout)
