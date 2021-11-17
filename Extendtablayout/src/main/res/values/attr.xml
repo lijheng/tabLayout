@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="ExtendTabLayout">
-        <attr name="extendTabIndicatorHeight" format="dimension" />
         <attr name="extendTabIndicatorMarginStart" format="dimension" />
         <attr name="extendTabIndicatorMarginEnd" format="dimension" />
-        <attr name="extendTabIndicatorSelectColor" format="color|reference" />
-        <attr name="extendTabTextSize" format="dimension" />
-        <attr name="extendTabIndicatorDrawable" format="reference" />
         <attr name="extendTabIndicatorWidth" format="dimension"/>
         <attr name="extendTabIndicatorOverStart" format="dimension"/>
         <attr name="extendTabIndicatorOverEnd" format="dimension"/>

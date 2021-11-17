@@ -12,16 +12,70 @@
         android:id="@+id/act_main_tabLayout"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        app:extendTabIndicatorDrawable="@drawable/indicator"
-        app:extendTabIndicatorHeight="3dp"
-        app:extendTabIndicatorSelectColor="#009049"
+        app:tabIndicator="@drawable/indicator"
+        app:tabIndicatorHeight="3dp"
         app:tabIndicatorColor="@color/themeColor"
         app:tabIndicatorFullWidth="false"
-        app:tabIndicatorHeight="0dp"
-        app:tabMode="scrollable"
+        app:tabMode="fixed"
         app:extendTabIndicatorOverStart="10dp"
         app:extendTabIndicatorOverEnd="10dp"
         app:tabSelectedTextColor="@color/themeColor"
+        app:tabTextColor="#333333" />
+
+    <com.summer.extendtablayout.ExtendTabLayout
+        android:id="@+id/act_main_tabLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        app:tabIndicator="@drawable/indicator"
+        app:tabIndicatorHeight="3dp"
+        app:tabIndicatorColor="@color/themeColor"
+        app:tabIndicatorFullWidth="true"
+        app:tabMode="fixed"
+        app:extendTabIndicatorOverStart="10dp"
+        app:extendTabIndicatorOverEnd="10dp"
+        app:tabSelectedTextColor="@color/themeColor"
+        app:tabTextColor="#333333" />
+
+    <com.summer.extendtablayout.ExtendTabLayout
+        android:id="@+id/act_main_tabLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        app:tabIndicator="@drawable/indicator"
+        app:tabIndicatorHeight="3dp"
+        app:tabIndicatorColor="@color/themeColor"
+        app:tabIndicatorFullWidth="true"
+        app:tabMode="fixed"
+        app:extendTabIndicatorMarginStart="10dp"
+        app:extendTabIndicatorMarginEnd="10dp"
+        app:tabSelectedTextColor="@color/themeColor"
+        app:tabTextColor="#333333" />
+
+    <com.summer.extendtablayout.ExtendTabLayout
+        android:id="@+id/act_main_tabLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        app:tabIndicator="@drawable/indicator"
+        app:tabIndicatorHeight="3dp"
+        app:tabIndicatorColor="@color/themeColor"
+        app:tabIndicatorFullWidth="true"
+        app:tabMode="fixed"
+        app:extendTabSelectTextSize="18sp"
+        app:tabSelectedTextColor="@color/themeColor"
+        app:tabTextColor="#333333" />
+
+    <com.summer.extendtablayout.ExtendTabLayout
+        android:id="@+id/act_main_tabLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        app:tabIndicator="@drawable/indicator"
+        app:tabIndicatorHeight="3dp"
+        app:tabIndicatorColor="@color/themeColor"
+        app:tabIndicatorFullWidth="true"
+        app:tabMode="fixed"
+        app:extendTabSelectTextSize="18sp"
+        app:tabSelectedTextColor="@color/themeColor"
+        app:extendTabIndicatorMarginStart="10dp"
+        app:extendTabIndicatorMarginEnd="10dp"
         app:tabTextColor="#333333" />
 
     <androidx.viewpager.widget.ViewPager
