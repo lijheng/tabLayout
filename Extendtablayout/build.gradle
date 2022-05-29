@@ -1,7 +1,27 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'maven-publish'
 group='com.github.lijheng'
+ext {
+    PUBLISH_GROUP_ID = "io.github.lijheng"		//项目包名
+    PUBLISH_ARTIFACT_ID = 'tabLayout'			//项目名
+    PUBLISH_VERSION = "1.0.0"					//版本号
+}
+apply from: "${rootProject.projectDir}/publish-mavencentral.gradle"
+
+
+buildscript {
+    repositories {
+        mavenCentral()
+        google()
+        maven { url "https://jitpack.io" }
+    }
+    dependencies {
+        //这里我写的时候是这个版本
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+    }
+}
+
 android {
     compileSdkVersion 31
 
